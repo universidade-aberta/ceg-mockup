@@ -1,0 +1,108 @@
+.c3-framew-gutenbergblocks-accordionblock .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: var(--framew-bg-color, #FFFFFF);
+    background-clip: border-box;
+    border: 0 none;
+}
+
+.c3-framew-gutenbergblocks-accordionblock .card-header {
+    background-color: var(--framew-card-header-bg-color, #F3F3F3);
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+}
+
+.c3-framew-gutenbergblocks-accordionblock .card-header,
+.c3-framew-gutenbergblocks-accordionblock .card-header+.panel-content {
+    border: 1px solid var(--framew-card-border-color, #F3F3F3);
+}
+
+.c3-framew-gutenbergblocks-accordionblock .card-header button {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1.5em;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    border-radius: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin: 0;
+}
+
+.c3-framew-gutenbergblocks-accordionblock .card-header button,
+.c3-framew-gutenbergblocks-accordionblock .card-header button:before {
+    color: var(--framew-card-header-btn-color, #000);
+}
+
+.c3-framew-gutenbergblocks-accordionblock .card-header button:before {
+    display: block;
+    width: 10px;
+    float: right;
+    height: 1.5rem;
+    line-height: 2rem;
+    content: url("data:image/svg+xml,%3Csvg role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' %3E%3Cpath fill='currentColor' d='M136.5 185.1l116 117.8c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L128 224.7 27.6 326.9c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17l116-117.8c4.7-4.6 12.3-4.6 17 .1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.c3-framew-gutenbergblocks-accordionblock .card-header button[aria-expanded="true"]:before {
+    content: url("data:image/svg+xml,%3Csvg role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' %3E%3Cpath fill='currentColor' d='M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.c3-framew-gutenbergblocks-accordionblock .card-header {
+    border-radius: var(--framew-card-border-radius, 10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.c3-framew-gutenbergblocks-accordionblock .panel-expanded>.card>.card-header {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.c3-framew-gutenbergblocks-accordionblock .panel-expanded .panel-content {
+    border-bottom-left-radius: var(--framew-card-border-radius, 10px);
+    border-bottom-right-radius: var(--framew-card-border-radius, 10px);
+}
+
+.c3-framew-gutenbergblocks-accordionblock .card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    font-size: 1rem;
+}
+
+.c3-framew-gutenbergblocks-accordionblock .panel-content {
+    max-height: var(--height, 9999px);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.c3-framew-gutenbergblocks-accordionblock .panel-content[aria-hidden="true"] {
+    max-height: 0;
+    border-width: 0;
+    border-color: transparent;
+}
+
+.no-js .c3-framew-gutenbergblocks-accordionblock .panel-content {
+    --height: 9999px;
+    overflow-y: auto;
+}
+
+.c3-framew-gutenbergblocks-accordionblock .gba-pane+.gba-pane {
+    margin-top: 14px;
+}
+
+.c3-framew-gutenbergblocks-accordionblock .c3-framew-gutenbergblocks-accordionblock {
+    margin: 34px 0;
+}
+
+.js .c3-framew-gutenbergblocks-accordionblock .hide.panel-content {
+    --height: 0;
+}

@@ -1,0 +1,72 @@
+body {
+    overflow-x: hidden;
+}
+
+.c3-framew-gutenbergblocks-advancedcontainer.gbc.align-full,
+.c3-framew-gutenbergblocks-advancedcontainer.gbc.align-full>.gbc-background,
+.c3-framew-gutenbergblocks-advancedcontainer.gbc.align-full>.gbc-background-overlay {
+    margin-left: calc(-100vw / 2 + 100% / 2);
+    margin-right: calc(-100vw / 2 + 100% / 2);
+}
+
+.c3-framew-gutenbergblocks-advancedcontainer.gbc.align-full {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.c3-framew-gutenbergblocks-advancedcontainer.gbc>.gbc-wrapper>.inner-container {
+    position: relative;
+}
+
+.c3-framew-gutenbergblocks-advancedcontainer.gbc>.gbc-wrapper>.inner-container.container .align-full,
+.c3-framew-gutenbergblocks-advancedcontainer.gbc>.gbc-wrapper>.inner-container.container .alignfull {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container .c3-framew-gutenbergblocks-advancedcontainer.gbc:not(.align-full)>.gbc-wrapper>.inner-container.container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.c3-framew-gutenbergblocks-advancedcontainer.gbc {
+    display: block;
+    position: relative;
+}
+
+.c3-framew-gutenbergblocks-advancedcontainer.gbc>.gbc-background-overlay,
+.c3-framew-gutenbergblocks-advancedcontainer.gbc>.gbc-background {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    height: auto;
+}
+
+.c3-framew-gutenbergblocks-advancedcontainer.gbc.row-valign-middle,
+.c3-framew-gutenbergblocks-advancedcontainer.gbc .row-valign-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.c3-framew-gutenbergblocks-advancedcontainer.gbc.row-valign-middle>.innerblocks-wrap,
+.c3-framew-gutenbergblocks-advancedcontainer.gbc .row-valign-middle>.innerblocks-wrap {
+    width: 100%;
+}
+
+.c3-framew-gutenbergblocks-advancedcontainer.gbc.row-valign-bottom,
+.c3-framew-gutenbergblocks-advancedcontainer.gbc .row-valign-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.c3-framew-gutenbergblocks-advancedcontainer.gbc .gbc-container {
+    position: relative;
+}
+
+.c3-framew-gutenbergblocks-advancedcontainer.gbc.gbc-view {
+    overflow: hidden;
+}

@@ -1,0 +1,116 @@
+.wp-block-c3-framew-gutenberg-carousel {
+    --slide-color: #fff;
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-slides {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.wp-block-c3-framew-gutenberg-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-slides {
+    order: 1;
+    display: flex;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: auto;
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-slides::-webkit-scrollbar {
+    display: none;
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-slides .gbt-carousel-slide {
+    display: block;
+    backface-visibility: hidden;
+    scroll-snap-align: center;
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 100%;
+    object-fit: contain;
+}
+
+.wp-block-c3-framew-gutenberg-carousel .edge-control {
+    display: block !important;
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-indicators {
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+    top: 0;
+    position: absolute;
+    left: 50%;
+    z-index: 10;
+    translate: -50% calc(-1*(-100%));
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-indicators .gbt-carousel-indicator {
+    display: flex;
+    transition: all .3s ease;
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-indicators .gbt-carousel-indicator a {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    filter: brightness(1);
+    transition: all .6s ease var(--transition-delay, 0s);
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: var(--slide-color, #fff);
+    background-clip: padding-box;
+    width: 5px;
+    height: 5px;
+    border: 7px solid transparent;
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-indicators .gbt-carousel-indicator a:is(:hover, :focus-visible, :active, [aria-current="true"]) {
+    filter: brightness(2);
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-indicators .gbt-carousel-indicator:is(.go-to-previous, .go-to-next) {
+    display: flex;
+    align-items: center;
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-indicators .gbt-carousel-indicator:is(.go-to-previous, .go-to-next) a {
+    border: 10px solid transparent;
+    border-top: 10px solid var(--slide-color, #fff);
+    width: 0;
+    height: 0;
+    transition-duration: 0.3s;
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-indicators .gbt-carousel-indicator.go-to-previous a {
+    transform: rotate(90deg) translate(-1px, 5px);
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-indicators .gbt-carousel-indicator.go-to-next a {
+    transform: rotate(-90deg) translate(1px, 5px);
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-indicators .gbt-carousel-indicator:is(.go-to-previous, .go-to-next) a:is(:hover, :focus-visible, :active) {
+    filter: brightness(2);
+}
+
+.wp-block-c3-framew-gutenberg-carousel .gbt-carousel-slide-title-wrapper {
+    display: none;
+}
