@@ -31,6 +31,12 @@
     <script src="./assets/js/gutenbergblockcarousel.js" id="c3-wp-plugin-framew-module-gutenbergblocks/gutenbergblockcarousel-js" defer=""></script>
     <script src="./assets/js/gutenbergblockaccordion.js" id="c3-wp-plugin-framew-module-gutenbergblocks/gutenbergblockaccordion-js" defer=""></script>
     <script src="./assets/js/_script-17d356d910a565f2ff5a2ffb52c07746.js" id="C3WPPluginFrameWModuleCacheManager-footer-js" defer=""></script>
+
+    <!-- custom fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+    <link href="./assets/fonts/linux-libertine/linux-libertine.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body
@@ -449,11 +455,214 @@
         <div id="content-wrapper" class="flex-grow-1">
             <div id="content" role="main" class="container">
                 
+                <h1>Implementação eventos com Bootstrap 5</h1>
+
+                <div class="row justify-content-center news-list">
+                    <div class="news col-12 col-sm-6 col-lg-4 text-start p-sm-5">
+                        <div class="thumbnail"></div>
+
+                        <div class="meta-info p-4 d-flex flex-column gap-1">
+                            <div class="news-title">News Title</div>
+                            <div class="news-date">Calendar date | Site</div>
+                            <a class="news-link" href="#">Learn more</a>
+                        </div>
+                    </div>
+
+                    <div class="news col-12 col-sm-6 col-lg-4 text-start p-sm-5">
+                        <div class="thumbnail"></div>
+
+                        <div class="meta-info p-4 d-flex flex-column gap-1">
+                            <div class="news-title">News Title</div>
+                            <div class="news-date">Calendar date | Site</div>
+                            <a class="news-link" href="#">Learn more</a>
+                        </div>
+                    </div>
+
+                    <div class="news col-12 col-sm-6 col-lg-4 text-start p-sm-5">
+                        <div class="thumbnail"></div>
+
+                        <div class="meta-info p-4 d-flex flex-column gap-1">
+                            <div class="news-title">News Title</div>
+                            <div class="news-date">Calendar date | Site</div>
+                            <a class="news-link" href="#">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h1>Implementação eventos com CSS personalizado</h1>
+
+                <div class="justify-content-center custom-news-list news-list">
+                    <div class="news">
+                        <div class="thumbnail"></div>
+
+                        <div class="meta-info p-4 d-flex flex-column gap-1">
+                            <div class="news-title">News Title</div>
+                            <div class="news-date">Calendar date | Site</div>
+                            <a class="news-link" href="#">Learn more</a>
+                        </div>
+                    </div>
+
+                    <div class="news">
+                        <div class="thumbnail"></div>
+
+                        <div class="meta-info p-4 d-flex flex-column gap-1">
+                            <div class="news-title">News Title</div>
+                            <div class="news-date">Calendar date | Site</div>
+                            <a class="news-link" href="#">Learn more</a>
+                        </div>
+                    </div>
+
+                    <div class="news">
+                        <div class="thumbnail"></div>
+
+                        <div class="meta-info p-4 d-flex flex-column gap-1">
+                            <div class="news-title">News Title</div>
+                            <div class="news-date">Calendar date | Site</div>
+                            <a class="news-link" href="#">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+
+        <style>
+            /* news */
+            .custom-news-list {
+                display: grid;
+                grid-gap: 3rem;
+                grid-auto-flow: dense;
+                width: 100%;
+                grid-template-columns: repeat(auto-fill,minmax(100%, 1fr));
+                grid-auto-rows: 1fr;
+            }
+
+            @media screen and (min-width: 450px) {
+                .custom-news-list {
+                  grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+                }
+            }
+
+            .news-list .news{
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+            }
+            .news-list .news .thumbnail{
+                background-color: black; 
+                width:auto; 
+                max-width: 100%; 
+                height: 200px;
+
+                order: 1;
+            }
+            .news-list .news .meta-info{
+                order: 2;
+            }
+            .news-list .news:nth-child(even) .thumbnail{
+                order:2;
+            }
+            .news-list .news:nth-child(even) .meta-info{
+                order:1;
+                justify-content: end;
+            }
+
+
+            .news-title {
+                font-size: 2.3rem;
+                line-height: 2.3rem;
+                font-weight: 700;
+                font-family: "Open Sans", sans-serif;
+                font-optical-sizing: auto;
+                font-style: normal;
+                font-variation-settings: "wdth" 100;
+                color: #2A3180;
+            }
+            .news-date {
+                font-size: 1rem;
+                font-weight: 500;
+                font-family: "Linux Libertine", sans-serif;
+                color: #000000;
+            }
+
+            .news-link:is(:scope, :link, :visited) {
+                font-size: 1rem;
+                font-weight: 800;
+                font-family: "Open Sans", sans-serif;
+                color: #D29B2E;
+                text-transform: uppercase;
+                text-decoration: none;
+                position: relative;
+                width: min-content;
+                white-space: nowrap;
+            }
+            .news-link:is(:hover, :focus, :active) {
+                color: #D29B2E;
+            }
+            .news-link:after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -0.3rem;
+                left: 40%;
+                transform: translate(-40%, 0);
+                border-bottom: 3px solid #D29B2E;
+                width: 0%;
+                opacity: 0;
+                transition: width cubic-bezier(.68,-0.55,.27,1.55) 0.2s, opacity cubic-bezier(.68,-0.55,.27,1.55) 0.2s;
+            }
+            .news-link:is(:hover, :focus, :active):after {
+                width: 80%;
+                opacity: 1;
+            }
+        </style>
+
+
+
+        <!-- exemplo footer bootstrap -->
+        <footer id="footer">
+            <div class="pt-4">
+                <div class="container py-4 text-white">
+                    <div class="row align-itens-center justify-content-center text-center">
+                        <div class="col-12 col-sm-6 col-lg-3 p-3">
+                            <div class="container">
+                                <div class="align-items-center align-items-lg-start d-flex flex-column">
+                                    <a href="http://www.uab.pt/" target="_blank" rel="noopener"><img loading="lazy" alt="Universidade Aberta" src="./assets/images/UAb.svg" class="img-fluid"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 p-3">
+                            <div class="container">
+                                <div class="align-items-center align-items-lg-start d-flex flex-column">
+                                    <img loading="lazy" alt="Universidade Aberta" src="./assets/images/CEG.svg" class="img-fluid" style="max-width: 170px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 p-3">
+                            <div class="container">
+                                <div class="align-items-center align-items-lg-start d-flex flex-column">
+                                    ABERTA UNIVERSITY
+                                    Rua da Escola Politécnica, n.º 147
+                                    1269-001 Lisbon – Portugal
+                                    <br>(Yellow line, Rato Metro Station)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 p-3">
+                            <div class="container">
+                                <div class="align-items-center align-items-lg-start d-flex flex-column">
+                                    Phone: +351 213 916 300
+                                    E-mail: ceg.estudosglobais@uab.pt
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
         
         <!-- exemplo footer manual -->
         <style>
+            
             #footer{
                 background-color: #2a317f;
                 color: #fff;
@@ -482,9 +691,9 @@
                 display: flex;
                 align-items: center;
 
-                gap: 3rem;
+                gap: 2rem;
 
-                padding: 3rem 1rem;
+                padding: 1rem 1rem;
             }
 
             /* estilos para o telemóvel */
@@ -496,14 +705,36 @@
                 width: auto;
             }
 
+            .uab-wrapper{
+                order: 1;
+            }
+            .ceg-wrapper{
+                order: 3;
+            }
+            .uab-contacts-wrapper{
+                order: 2;
+            }
+            .ceg-contacts-wrapper{
+                order: 4;
+            }
+
+            .ceg-container .ceg-column{
+                text-align: center;
+            }
+
             /* estilos para o desktop */
             @media (min-width: 572px){
                 .ceg-container{
                     flex-wrap: wrap;
                     flex-direction: row;
+
+                    gap: 3rem;
+    
+                    padding: 3rem 1rem;
                 }
                 .ceg-container .ceg-column{
                     width: calc(50% - 1.5rem);
+                    text-align: left;
                 }
             }
             @media (min-width: 992px){
@@ -514,6 +745,32 @@
                 .ceg-container .ceg-column{
                     width: 25%;
                 }
+                .uab-contacts-wrapper{
+                    order: 3;
+                }
+                .ceg-wrapper{
+                    order: 2;
+                }
+            }
+
+            body,
+            .ceg-open-sans{
+                font-family: "Open Sans", sans-serif;
+            }
+            .ceg-linux-libertine{
+                font-family: "Linux Libertine", sans-serif;
+            }
+            .ceg-title{
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 1.2rem;
+                color:#D29B2E;
+                padding: 0.5rem 0;
+            }
+            hr.ceg-separator{
+                border: 2px solid #D29B2E;
+                width: 15%;
+                opacity: 1;
             }
 
         </style>
@@ -521,63 +778,28 @@
         <footer id="footer">
             <div class="ceg-wrapper">
                 <div class="ceg-container">
-                    <div class="ceg-column">
+                    <div class="ceg-column uab-wrapper">
                         <a href="http://www.uab.pt/" target="_blank" rel="noopener"><img loading="lazy" alt="Universidade Aberta" src="./assets/images/UAb.svg" class="img-fluid"></a>
                     </div>
-                    <div class="ceg-column">
+                    <div class="ceg-column ceg-wrapper">
                         <img loading="lazy" alt="Universidade Aberta" src="./assets/images/CEG.svg" class="img-fluid" style="max-width: 170px;">
                     </div>
-                    <div class="ceg-column">
-                        ABERTA UNIVERSITY
-                        Rua da Escola Politécnica, n.º 147
-                        1269-001 Lisbon – Portugal
-                        (Yellow line, Rato Metro Station)
+                    <div class="ceg-column uab-contacts-wrapper">
+                        <div class="ceg-title ceg-open-sans">Aberta University</div>
+                        <p class="ceg-open-sans">
+                            <span class="fw-semibold">
+                                Rua da Escola Politécnica, n.º 147
+                                1269-001 Lisbon – Portugal
+                            </span>
+                            <br>(Yellow line, Rato Metro Station)
+                        </p>
                     </div>
-                    <div class="ceg-column">
-                        Phone: +351 213 916 300
-                        E-mail: ceg.estudosglobais@uab.pt
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- exemplo footer bootstrap -->
-        <footer id="footer">
-            <div class="pt-4">
-                <div class="container py-4 text-white">
-                    <div class="row align-itens-center justify-content-center text-center">
-                        <div class="col-12 col-sm-6 col-lg-3 p-3">
-                            <div class="container">
-                                <div class="align-items-center align-items-lg-start d-flex flex-column">
-                                    <a href="http://www.uab.pt/" target="_blank" rel="noopener"><img loading="lazy" alt="Universidade Aberta" src="./assets/images/UAb.svg" class="img-fluid"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-3 p-3">
-                            <div class="container">
-                                <div class="align-items-center align-items-lg-start d-flex flex-column">
-                                    <img loading="lazy" alt="Universidade Aberta" src="./assets/images/CEG.svg" class="img-fluid" style="max-width: 170px;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-3 p-3">
-                            <div class="container">
-                                <div class="align-items-center align-items-lg-start d-flex flex-column">
-                                    ABERTA UNIVERSITY
-                                    Rua da Escola Politécnica, n.º 147
-                                    1269-001 Lisbon – Portugal
-                                    (Yellow line, Rato Metro Station)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-3 p-3">
-                            <div class="container">
-                                <div class="align-items-center align-items-lg-start d-flex flex-column">
-                                    Phone: +351 213 916 300
-                                    E-mail: ceg.estudosglobais@uab.pt
-                                </div>
-                            </div>
-                        </div>
+                    <div class="ceg-column ceg-contacts-wrapper">
+                        <p class="fw-semibold ceg-open-sans">
+                            <div><hr class="ceg-separator d-inline-block"></div>
+                            Phone: +351 213 916 300
+                            E-mail: ceg.estudosglobais@uab.pt
+                        </p>
                     </div>
                 </div>
             </div>
